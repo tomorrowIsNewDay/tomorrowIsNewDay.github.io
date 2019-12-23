@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>五角星⭐️</title>
+</head>
+<body>
+    <section>
+        <canvas id='myCanvas' style="border: 1px solid #aaa;display: block;margin: 50px auto">
+            您的浏览器不支持canvas。。。
+        </canvas>
+    </section>
+    
+    <script>
+        window.onload = function() {
+            var myCanvas = document.getElementById('myCanvas')
+            myCanvas.width = 800
+            myCanvas.height = 800
+
+            var context = myCanvas.getContext('2d')
+
+            
+
+            drawStar(context, 150, 300, 400, 400, 30)
+
+            context.lineWidth = 10
+            context.lineJoin = 'miter'
+
+            context.fillStyle = 'yellow'
+            context.fill()
+            context.stroke()
+
+
+            /**
+            * r 内圆的半径， R外圆的半径
+            * x x轴偏移量 ， y y轴偏移量
+            * rot 旋转角度
+            */
+           function drawStar(cxt, r, R, x, y, rot) {
+            context.beginPath()
+            
+            for(var i=0; i< 5; i++) {
+                context.lineTo( Math.cos((18 + i*72 - rot) / 180 * Math.PI) * R + x,
+                                -Math.sin((18 + i*72 - rot) / 180 * Math.PI) * R + y)
+
+                context.lineTo( Math.cos((54 + i*72 - rot) / 180 * Math.PI) * r + x,
+                            -Math.sin((54 + i*72 - rot) / 180 * Math.PI) * r + y) 
+            }
+
+            context.closePath()
+           } 
+        }
+    </script>
+</body>
+</html>

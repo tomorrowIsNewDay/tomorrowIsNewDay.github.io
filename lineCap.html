@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas project</title>
+</head>
+<body>
+    <section>
+        <canvas id='myCanvas'></canvas>
+    </section>
+    
+    <script>
+        window.onload = function() {
+            var myCanvas = document.getElementById('myCanvas')
+            myCanvas.width = 800
+            myCanvas.height = 800
+
+            var context = myCanvas.getContext('2d')
+
+            context.lineWidth = 10
+            context.strokeStyle = '#005588'
+
+            context.beginPath()
+            context.moveTo(100, 200)
+            context.lineTo(700, 200)
+            context.lineCap = 'butt'
+            // context.closePath()
+            context.stroke()
+
+            context.beginPath()
+            context.moveTo(100, 400)
+            context.lineTo(700, 400)
+            context.lineCap = 'round'
+            // context.closePath()
+            context.stroke()
+
+            context.beginPath()
+            context.moveTo(100, 600)
+            context.lineTo(700, 600)
+            context.lineCap = 'square'
+            // context.closePath()
+            context.stroke()
+
+            // baseline
+            context.lineWidth = 1
+            context.strokeStyle = '#27a'
+            context.moveTo(100, 100)
+            context.lineTo(100, 700)
+            context.moveTo(700, 100)
+            context.lineTo(700, 700)
+            context.stroke()
+
+
+        }
+    </script>
+</body>
+</html>
