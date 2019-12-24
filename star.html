@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>✨夜晚的星空，美么⭐️</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
     <section>
-        <canvas id='myCanvas' style="border: 1px solid #aaa;display: block;margin: 50px auto">
+        <canvas id='myCanvas' style="border: 1px solid #aaa;display: block">
             您的浏览器不支持canvas。。。
         </canvas>
     </section>
@@ -16,8 +22,8 @@
     <script>
         window.onload = function() {
             var myCanvas = document.getElementById('myCanvas')
-            myCanvas.width = 800
-            myCanvas.height = 800
+            myCanvas.width = document.documentElement.clientWidth
+            myCanvas.height = document.documentElement.clientHeight
 
             var context = myCanvas.getContext('2d')
 
