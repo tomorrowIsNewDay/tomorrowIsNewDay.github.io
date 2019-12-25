@@ -46,3 +46,29 @@ context.save()
 // 。。。操作画布
 // 状态的恢复
 context.restore()
+
+##### fillStyle
+
+##### 线性渐变
+step1: var grd = context.createLinearGradient(xstart, ystart, xend, yend)
+
+// stop 浮点数，颜色的位置（0.0 ~ 1.0）
+// addColorStop可以添加多个
+step2: grd.addColorStop(stop, color)
+
+context.fillStyle = grd
+context.fillRect(...)
+
+##### 经向渐变
+step1: var grd = context.createRadialGradient(x0, y0, r0, x1, y1, r1)
+// x0 y0, r0 第一个圆的圆点坐标点和半径
+// x1 y1, r1 第二个圆的圆点坐标点和半径
+
+// stop 浮点数，颜色的位置（0.0 ~ 1.0）
+// addColorStop可以添加多个
+step2: grd.addColorStop(stop, color)
+
+##### createPattern 图片填充/ canvas / video填充
+context.fillStyle = createPattern(img, repeat-style)
+createPattern(video, repeat-style) / createPattern(canvas, repeat-style)
+repeat-style: no-repeat / repeat-x /repeat-y /repeat
