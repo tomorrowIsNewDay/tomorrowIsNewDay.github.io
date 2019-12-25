@@ -69,6 +69,6 @@ step1: var grd = context.createRadialGradient(x0, y0, r0, x1, y1, r1)
 step2: grd.addColorStop(stop, color)
 
 ##### createPattern 图片填充/ canvas / video填充
-context.fillStyle = createPattern(img, repeat-style)
-createPattern(video, repeat-style) / createPattern(canvas, repeat-style)
+context.fillStyle = createPattern([img | video | canvas], repeat-style)
+
 repeat-style: no-repeat / repeat-x /repeat-y /repeat
