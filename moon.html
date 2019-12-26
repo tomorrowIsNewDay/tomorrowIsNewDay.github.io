@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>月亮🌛</title>
+</head>
+<body>
+    <section>
+        <canvas id='myCanvas' style="border: 1px solid #aaa;display: block;margin: 50px auto">
+            您的浏览器不支持canvas。。。
+        </canvas>
+    </section>
+    
+    <script>
+        window.onload = function() {
+            var myCanvas = document.getElementById('myCanvas')
+            myCanvas.width = 800
+            myCanvas.height = 800
+
+            var context = myCanvas.getContext('2d')
+            fillMoon(context, 2, 600, 200, 100 ,30)
+
+            function fillMoon(ctx, d, x, y, r, rot, fillColor) {
+                ctx.save()
+                ctx.translate(x, y)
+                ctx.rotate(rot * Math.PI / 180)
+                ctx.scale(r, r)
+                pathMoon(ctx, d)
+                ctx.fillStyle = fillColor || '#fd5'
+                ctx.fill()
+                ctx.restore()
+            }
+
+            function pathMoon (context, d) {
+                context.beginPath()
+                context.arc(0,0,1,0.5*Math.PI, 1.5 * Math.PI, true)
+                context.moveTo(0, -1)
+                context.arcTo(d, 0,0,1, dis(0, -1, d, 0) / d)
+                context.closePath()
+                
+            }
+
+            function dis(x1, y1, x2, y2) {
+                return Math.sqrt((x1-x2) * (x1-x2) + (y1-y2)*(y1-y2))
+            }
+
+            
+            
+        }
+    </script>
+</body>
+</html>
