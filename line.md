@@ -101,4 +101,4 @@ quadraticCurveTo(x1, y1, x2, y2)
 ##### 三次贝塞尔曲线
 起始点-控制点-控制点-结束点
 moveTo(x0, y0)
-bezeirCurveTo(x1, y1, x2, y2, x3, y3)
+bezierCurveTo(x1, y1, x2, y2, x3, y3)

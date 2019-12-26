@@ -54,6 +54,7 @@
              }
 
              fillMoon(context, 2, myCanvas.width * 0.75, myCanvas.width * 0.15, 100 ,30)
+             drawLand(context)
             //  window.requestAnimationFrame(render)
             }
             
@@ -127,6 +128,25 @@
 
             function dis(x1, y1, x2, y2) {
                 return Math.sqrt((x1-x2) * (x1-x2) + (y1-y2)*(y1-y2))
+            }
+
+            /** 绿地*/
+            function drawLand(ctx) {
+                ctx.save()
+                ctx.beginPath()
+                ctx.moveTo(0, 600)
+                ctx.bezierCurveTo(540, 400, 660, myCanvas.height, myCanvas.width, 600)
+                ctx.lineTo(myCanvas.width, myCanvas.height)
+                ctx.lineTo(0,myCanvas.height)
+                ctx.closePath()
+
+                var landStyle = ctx.createLinearGradient(0, 800, 0, 0)
+                landStyle.addColorStop(0.0, '#030')
+                landStyle.addColorStop(1.0, '#580')
+                ctx.fillStyle = landStyle
+                
+                ctx.fill()
+                ctx.restore()
             }
         }
     </script>
