@@ -102,3 +102,15 @@ quadraticCurveTo(x1, y1, x2, y2)
 起始点-控制点-控制点-结束点
 moveTo(x0, y0)
 bezierCurveTo(x1, y1, x2, y2, x3, y3)
+
+##### 文字渲染
+context.font = 'font-size font-style font-weight...'
+// 文本对齐
+context.textAlign = 'left' | 'center' | 'right'
+context.baseLine = 'top' | 'middle' | 'bottom'
+// 文本度量
+context.measureText(string).width
+
+context.fillText(text, x, y, [maxlen])
+maxlen:最长宽度
+context.storkeText(text, x, y, [maxlen])
