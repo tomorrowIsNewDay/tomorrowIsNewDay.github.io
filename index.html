@@ -12,6 +12,7 @@
             padding: 0;
         }
     </style>
+    <meta name="description" content="weifewf7890" />
 </head>
 <body>
     <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" style="height:0;width:0;overflow: hidden" />
@@ -26,9 +27,15 @@
     <script>
         window.onload = function() {
             var desMeta = document.createElement("meta");
+            
       desMeta.setAttribute('name', 'description');
       desMeta.setAttribute('content', '史蒂夫是的范围为恶我问问')
       document.head.appendChild(desMeta)
+            var faviconLink = document.createElement("link");
+      faviconLink.setAttribute('rel', 'icon');
+      faviconLink.setAttribute('type', 'image/x-icon');
+      faviconLink.setAttribute('href', 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png');
+      document.head.appendChild(faviconLink);
             var myCanvas = document.getElementById('myCanvas')
             myCanvas.width = document.documentElement.clientWidth
             myCanvas.height = document.documentElement.clientHeight
