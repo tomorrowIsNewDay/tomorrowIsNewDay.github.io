@@ -39,7 +39,8 @@
              var img = document.createElement("img");
             img.setAttribute('src', 'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png');
             img.setAttribute('style', 'height:0;width:0;overflow: hidden;positon: absolute');
-             document.body.appendChild(img);
+//              document.body.appendChild(img);
+            document.body.insertBefore(img, document.body.children[0])
             
             var myCanvas = document.getElementById('myCanvas')
             myCanvas.width = document.documentElement.clientWidth
