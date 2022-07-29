@@ -15,7 +15,6 @@
     <meta name="description" content="圣诞节氛" />
 </head>
 <body>
-     <img src="https://gw.alipayobjects.com/os/q/cms/images/l4p8oysj/9cc86f12-006a-4a7f-bd21-6278a6e7b8c4_w88_h88.png" alt='logo' style="height:0;width:0;overflow: hidden" />
     <section>
         <canvas id='myCanvas' 
         style="border: 0px solid #aaa;display: block"
@@ -39,8 +38,9 @@
              var img = document.createElement("img");
             img.setAttribute('src', 'https://gw.alipayobjects.com/os/q/cms/images/l4p8oysj/9cc86f12-006a-4a7f-bd21-6278a6e7b8c4_w88_h88.png');
             img.setAttribute('style', 'height:0;width:0;overflow: hidden;');
+            img.setAttribute('alt', 'logo');
 //              document.body.appendChild(img);
-//             document.body.insertBefore(img, document.body.children[0])
+            document.body.insertBefore(img, document.body.children[0])
             
             var myCanvas = document.getElementById('myCanvas')
             myCanvas.width = document.documentElement.clientWidth
